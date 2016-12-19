@@ -1,0 +1,13 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: libmatsu/mongo-python3
+
+inputs:
+  - name: cinema3-movies
+
+run:
+  path: cinema3-movies/ci/scripts/test_runner.sh
