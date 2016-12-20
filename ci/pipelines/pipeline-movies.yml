@@ -17,5 +17,5 @@ jobs:
     trigger: true
   - task: test-movies
     privileged: true
-    file: cinema3-movies/ci/tasks/run_movies_test.yml
+    file: cinema3-movies/ci/tasks/movies_unittest.yml
     params:
