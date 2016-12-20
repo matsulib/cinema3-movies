@@ -1,0 +1,21 @@
+---
+# Resourceの定義
+resources:
+# Git Resourceの定義
+- name: cinema3-movies
+  type: git
+  source:
+    uri: https://github.com/matsulib/cinema3-movies.git 
+
+
+# Jobの定義
+jobs:
+- name: movies-unittest
+  public: true
+  plan:
+  - get: cinema3-movies
+    trigger: true
+  - task: test-movies
+    privileged: true
+    file: cinema3-movies/ci/tasks/run_movies_test.yml
+    params:
